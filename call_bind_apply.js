@@ -25,8 +25,8 @@ const person2 = {
 const greetPerson = greet2.bind(person2, "Hello", "!");
 greetPerson(); // Output: Hello, John Doe!
 
-function greet3(message, others) {
-  console.log(`${message}, ${this.firstName} ${this.lastName}${others}`);
+function greet3(message, punctuation) {
+  console.log(`${message}, ${this.firstName} ${this.lastName}${punctuation}`);
 }
 
 const person3 = {
@@ -35,4 +35,4 @@ const person3 = {
 };
 
 // Using apply() to invoke greet() with multiple arguments
-greet3.call(person3, ["Hello", "!", "yogi"], ["Hello", "!", "yogi"]); // Output: Hello, John Doe!
+greet3.apply(person3, ["Hello", "!"]); // Output: Hello, John Doe!
